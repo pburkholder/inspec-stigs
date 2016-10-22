@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 
 # this is a really dirty script to parse a STIG from JSON format and
 # create inspec controls for them
@@ -8,6 +8,13 @@
 # $ wget -O json/rhel6.json https://www.stigviewer.com/stig/red_hat_enterprise_linux_6/2015-05-26/MAC-3_Sensitive/json
 # $ inspec init profile rhel6
 # $ ./read_stig_json.rb -i json/rhel6.json -d rhel6/controls
+
+# For windows:
+# $ t=win2012member
+# $ curl -o json/$t.json https://www.stigviewer.com/stig/microsoft_windows_server_2012_member_server/2013-07-25/MAC-3_Sensitive/json
+# $ inspec init profile $t
+# $ ./read_stig_json.rb -i json/$t.json -d $t/controls
+
 
 require 'json'
 require 'optparse'
@@ -28,6 +35,7 @@ stig = parsed['stig']
 #puts JSON.pretty_generate(stig)
 
 def safe(input)
+  return nil if input.nil?
   input.gsub("'", "\\\\'")
 end
 
@@ -45,13 +53,13 @@ end
 def make_inspec_rule(control)
   inspec_file = "src/inspec/#{control}.rb"
   if ! File.file?(inspec_file)
-    inspec = <<~HEREDOC
+    inspec = <<~RULEDOC
       # START_DESCRIBE #{control}
         # describe file('/etc') do
         #   it { should be_directory }
         # end
       # END_DESCRIBE #{control}
-    HEREDOC
+    RULEDOC
     puts "writing #{inspec_file}"
     File.write(inspec_file, inspec)
   else
@@ -98,7 +106,6 @@ controls.each do |control|
     end
   HEREDOC
 
-  #File.write("#{$dest}/#{control}.rb", output)
+  File.write("#{$dest}/#{control}.rb", output)
 
 end
-
