@@ -38,9 +38,17 @@ Value: 0
 '
 
 # START_DESCRIBE WN12-CC-000001
-  # describe file('/etc') do
-  #   it { should be_directory }
-  # end
+describe registry_key({
+  name: 'Task Scheduler',
+  hive: 'HKEY_LOCAL_MACHINE',
+  key: '\Software\Policies\Microsoft\Windows\LLTD'
+}) do
+  its('AllowLLTDIOOndomain') { should eq 0 }
+  its('AllowLLTDIOOnPublicNet') { should eq  }
+  its('EnableLLTDIO') { should eq 0 }
+  its('ProhibitLLTDIOOnPrivateNet') { should eq 0 }
+
+end
 # END_DESCRIBE WN12-CC-000001
 
 end

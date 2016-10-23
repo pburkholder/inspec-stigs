@@ -5,11 +5,11 @@
 # description: Microsoft Windows Server 2012 Security Technical Implementation Guide (STIG) is published as a tool to improve the security of Department of Defense (DoD) information systems. Comments or proposed revisions to this document should be sent via e-mail to the following address: disa.letterkenny.FSO.mbx.stig-customer-support-mailbox@mail.mil.
 # impacts
 
-title 'WN12-CC-000005 - Domain users must be required to elevate when setting a network's location.'
+title 'WN12-CC-000005 - Domain users must be required to elevate when setting a network\'s location.'
 
 control 'WN12-CC-000005' do
   impact 0.1
-  title 'Domain users must be required to elevate when setting a network's location.'
+  title 'Domain users must be required to elevate when setting a network\'s location.'
   desc '
 Selecting an incorrect network location may allow greater exposure of a system.  Elevation is required by default on nondomain systems to change network location.  This setting configures elevation to also be required on domain-joined systems.
 '

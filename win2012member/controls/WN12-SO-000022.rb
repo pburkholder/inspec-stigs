@@ -39,7 +39,7 @@ By using this IS (which includes any device attached to this IS), you consent to
   tag checktext: '
 If the following registry value does not exist or is not configured as specified, this is a finding:
 
-Registry Hive: HKEY_LOCAL_MACHINE 
+Registry Hive: HKEY_LOCAL_MACHINE
 Registry Path: \Software\Microsoft\Windows\CurrentVersion\Policies\System\
 
 Value Name: LegalNoticeText
@@ -68,9 +68,13 @@ Deviations are not permitted except as authorized by the Deputy Assistant Secret
 '
 
 # START_DESCRIBE WN12-SO-000022
-  # describe file('/etc') do
-  #   it { should be_directory }
-  # end
+  describe registry_key({
+    name: 'Legal Notice',
+    hive: 'HKEY_LOCAL_MACHINE',
+    key: '\Software\Microsoft\Windows\CurrentVersion\Policies\System'
+  }) do
+    its('LegalNoticeText') { should match(/You are accessing a U.S. Government (USG) Information System/) }
+  end
 # END_DESCRIBE WN12-SO-000022
 
 end

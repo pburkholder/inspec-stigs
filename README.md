@@ -44,6 +44,15 @@ user    0m12.392s
 sys 1m6.712s
 ```
 
+## Windows Demo:
+
+```
+inspec exec path/to/inspec-stigs/win2012member/ -t winrm://username@host  \
+--password 'password' --format=progress
+
+
+## Note on Windows STIGS
+
 The STIGs are pulled down from https://www.stigviewer.com. The Windows2012 is based on https://www.stigviewer.com/stig/microsoft_windows_server_2012_member_server/2013-07-25/.
 
 Why are we not using the newer https://www.stigviewer.com/stig/windows_server_2012_2012_r2_member_server/? Because the tests there are un-automatable.  For example, the

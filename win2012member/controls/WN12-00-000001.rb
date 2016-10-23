@@ -27,9 +27,7 @@ Verify servers are located in controlled access areas that are accessible only t
 '
 
 # START_DESCRIBE WN12-00-000001
-  # describe file('/etc') do
-  #   it { should be_directory }
-  # end
+# No chck possible
 # END_DESCRIBE WN12-00-000001
 
 end

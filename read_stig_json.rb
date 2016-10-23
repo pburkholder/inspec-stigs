@@ -87,7 +87,7 @@ controls.each do |control|
     # description: #{stig["description"]}
     # impacts
 
-    title '#{control} - #{finding['title']}'
+    title '#{control} - #{save(finding['title'])}'
 
     control '#{control}' do
       impact #{impact(finding['severity'])}
