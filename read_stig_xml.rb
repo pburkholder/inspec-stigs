@@ -1,11 +1,24 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
+
+# Example:
+#  ./read_stig_xml.rb -i src/xml/U_Windows_2012_and_2012_R2_MS_STIG_V2R5_Manual-xccdf.xml -d win2012r2member
 require 'nokogiri'
 require 'optparse'
+
+def inspec_check(text, parse_reg=true)
+  return <<-CHECKDOC
+  describe file('') do
+    it "is a pending example"
+    # it { should match // }
+  end
+  CHECKDOC
+end
 
 # Gather inputs from CLI for input and destination files
 OptionParser.new do |o|
   o.on('-i FILENAME') { |i| $input = i }
   o.on('-d FILENAME') { |d| $dest = d }
+  o.on('-r') { |r| $registry = true }
   o.on('-h') { puts o; exit }
   o.parse!
 end
@@ -36,7 +49,7 @@ groups.each do |group|
   sevprep = xml.css('Rule')
   impact = sevprep[0]['severity']
   case impact
-  when 'low' 
+  when 'low'
     sev = '0.1'
   when 'medium'
     sev = '0.5'
@@ -77,9 +90,7 @@ control '#{id}' do
   tag checktext: '#{checktxt.text.gsub("'", "")}'
 
 # START_DESCRIBE #{id}
-  describe file('') do
-    it { should match // }
-  end
+  #{inspec_check(checktxt.text)}
 # STOP_DESCRIBE #{id}
 
 end

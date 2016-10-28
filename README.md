@@ -24,17 +24,17 @@ Pending: (Failures listed here are expected and do not affect your suite's statu
 
   1) Operating System Detection Skipped control due to only_if condition.
      # Not yet implemented
-     # 
+     #
 ...
 ...
 Failures:
 
   1) SSH Configuration HostbasedAuthentication should eq "no"
      Failure/Error: DEFAULT_FAILURE_NOTIFIER = lambda { |failure, _opts| raise failure }
-     
+
        expected: "no"
             got: nil
-     
+
        (compared using ==)
      # /vagrant/rhel6/controls/V-38612.rb:41:in `block (3 levels) in load_with_context'
 ...
@@ -44,3 +44,9 @@ user    0m12.392s
 sys 1m6.712s
 ```
 
+## Windows Demo:
+
+```
+inspec exec path/to/inspec-stigs/win2012member/ -t winrm://username@host  \
+  --password 'password' --format=progress
+```
