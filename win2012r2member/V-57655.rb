@@ -27,9 +27,11 @@ Local accounts:
 Run "Net user <username>".  This will list the account properties, including "Account Expires".'
 
 # START_DESCRIBE V-57655
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-57655
 
 end

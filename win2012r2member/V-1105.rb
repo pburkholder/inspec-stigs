@@ -24,9 +24,11 @@ Navigate to Local Computer Policy -> Computer Configuration -> Windows Settings 
 If the value for the "Minimum password age" is set to "0" days ("Password can be changed immediately."), this is a finding.'
 
 # START_DESCRIBE V-1105
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1105
 
 end

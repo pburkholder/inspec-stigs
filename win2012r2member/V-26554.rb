@@ -27,9 +27,11 @@ Compare the AuditPol settings with the following.  If the system does not audit 
 System -> Security State Change - Failure'
 
 # START_DESCRIBE V-26554
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26554
 
 end

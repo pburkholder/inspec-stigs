@@ -29,9 +29,15 @@ Value: 1
 This setting may prevent a system from being joined to a domain if not configured consistently between systems.'
 
 # START_DESCRIBE V-3374
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'RequireStrongKey',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Services\Netlogon\Parameters',
+    }) do
+      its("RequireStrongKey") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-3374
 
 end

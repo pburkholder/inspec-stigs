@@ -25,9 +25,11 @@ If the file system column does not indicate "NTFS" as the file system for each l
 Some hardware vendors create a small FAT partition to store troubleshooting and recovery data. No other files must be stored here.  This must be documented with the ISSO.'
 
 # START_DESCRIBE V-1081
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1081
 
 end

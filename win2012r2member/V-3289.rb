@@ -25,9 +25,11 @@ A HID device is not required on a system that has the role as the Network Intrus
 If a host-based Intrusion Detection System is not installed on the system, this is a finding.'
 
 # START_DESCRIBE V-3289
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-3289
 
 end

@@ -19,9 +19,11 @@ control 'V-57645' do
   tag checktext: 'Verify systems that require additional protections due to factors such as inadequate physical protection or sensitivity of the data employ encryption to protect the confidentiality and integrity of all information at rest.  If it does not, this is a finding.'
 
 # START_DESCRIBE V-57645
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-57645
 
 end

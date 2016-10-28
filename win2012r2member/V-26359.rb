@@ -35,9 +35,15 @@ If a site-defined title is used, it can in no case contravene or modify the lang
 Automated tools may only search for the titles defined above. If a site-defined title is used, a manual review will be required.'
 
 # START_DESCRIBE V-26359
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'LegalNoticeCaption',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\System',
+    }) do
+      its("LegalNoticeCaption") { should eq See }
+    end
+
 # STOP_DESCRIBE V-26359
 
 end

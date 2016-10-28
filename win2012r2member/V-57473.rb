@@ -27,9 +27,11 @@ Type:  REG_DWORD
 Value:  0x00000032 (50)  (or greater)'
 
 # START_DESCRIBE V-57473
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-57473
 
 end

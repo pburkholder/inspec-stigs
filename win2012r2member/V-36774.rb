@@ -27,9 +27,15 @@ Type: REG_SZ
 Value: scrnsave.scr'
 
 # START_DESCRIBE V-36774
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'SCRNSAVE.EXE',
+      hive: 'HKEY_CURRENT_USER',
+      key:  '\Software\Policies\Microsoft\Windows\Control',
+    }) do
+      its("SCRNSAVE.EXE") { should eq scrnsave.scr }
+    end
+
 # STOP_DESCRIBE V-36774
 
 end

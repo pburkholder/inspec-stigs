@@ -19,9 +19,11 @@ control 'V-40173' do
   tag checktext: 'Determine whether system-related documentation is backed up in accordance with local recovery time and recovery point objectives.  If system-related documentation is not backed up in accordance with local recovery time and recovery point objectives, this is a finding.'
 
 # START_DESCRIBE V-40173
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-40173
 
 end

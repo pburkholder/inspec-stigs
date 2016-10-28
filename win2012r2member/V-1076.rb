@@ -19,9 +19,11 @@ control 'V-1076' do
   tag checktext: 'Determine whether system-level information is backed up in accordance with local recovery time and recovery point objectives.  If system-level information is not backed up in accordance with local recovery time and recovery point objectives, this is a finding.'
 
 # START_DESCRIBE V-1076
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1076
 
 end

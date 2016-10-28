@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 0'
 
 # START_DESCRIBE V-1075
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'ShutdownWithoutLogon',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\System',
+    }) do
+      its("ShutdownWithoutLogon") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-1075
 
 end

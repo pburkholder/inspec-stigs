@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 0x000dbba0 (900000) or less but not 0'
 
 # START_DESCRIBE V-3458
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'MaxIdleTime',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Windows',
+    }) do
+      its("MaxIdleTime") { should eq 0x000dbba0 }
+    end
+
 # STOP_DESCRIBE V-3458
 
 end

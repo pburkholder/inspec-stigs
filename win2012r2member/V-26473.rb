@@ -36,9 +36,11 @@ If the system serves the Remote Desktop Services role, the Remote Desktop Users 
 Organizations may grant this to other groups, such as more restrictive groups with administrative or management functions, if required.  Remote Desktop Services access must be restricted to the accounts that require it.  This must be documented with the ISSO.'
 
 # START_DESCRIBE V-26473
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26473
 
 end

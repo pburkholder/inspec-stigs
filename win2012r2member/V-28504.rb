@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-28504
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'DisableSendRequestAdditionalSoftwareToWER',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Windows\DeviceInstall\Settings',
+    }) do
+      its("DisableSendRequestAdditionalSoftwareToWER") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-28504
 
 end

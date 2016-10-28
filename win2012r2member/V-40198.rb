@@ -21,9 +21,11 @@ control 'V-40198' do
 Verify users with accounts in the Backup Operators group have a separate user account for backup functions and for performing normal user tasks.  If users with accounts in the Backup Operators group do not have separate accounts for backup functions and standard user functions, this is a finding.'
 
 # START_DESCRIBE V-40198
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-40198
 
 end

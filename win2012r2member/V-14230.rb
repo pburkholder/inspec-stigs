@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-14230
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'SCENoApplyLegacyAuditPolicy',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Control\Lsa',
+    }) do
+      its("SCENoApplyLegacyAuditPolicy") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-14230
 
 end

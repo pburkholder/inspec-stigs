@@ -24,9 +24,11 @@ Navigate to Local Computer Policy -> Computer Configuration -> Windows Settings 
 If any accounts or groups (to include administrators), are granted the "Act as part of the operating system" user right, this is a finding.'
 
 # START_DESCRIBE V-1102
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1102
 
 end

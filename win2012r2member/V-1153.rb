@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 5'
 
 # START_DESCRIBE V-1153
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'LmCompatibilityLevel',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Control\Lsa',
+    }) do
+      its("LmCompatibilityLevel") { should eq 5 }
+    end
+
 # STOP_DESCRIBE V-1153
 
 end

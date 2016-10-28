@@ -29,9 +29,15 @@ Value: (blank)
 Legitimate applications may add entries to this registry value. If an application requires these entries to function properly and is documented with the ISSO, this would not be a finding.  Documentation must contain supporting information from the vendors instructions.'
 
 # START_DESCRIBE V-3338
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'NullSessionPipes',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Services\LanManServer\Parameters',
+    }) do
+      its("NullSessionPipes") { should eq (blank) }
+    end
+
 # STOP_DESCRIBE V-3338
 
 end

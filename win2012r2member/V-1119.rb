@@ -27,9 +27,11 @@ Click the "Startup and Recovery" Settings button.
 If the drop-down list box "Default operating system:" shows any operating system other than Windows Server 2012, this is a finding.'
 
 # START_DESCRIBE V-1119
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1119
 
 end

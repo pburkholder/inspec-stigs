@@ -19,9 +19,11 @@ control 'V-36736' do
   tag checktext: 'Verify the system has software installed and running that provides certificate validation and revocation checking.  If it does not, this is a finding.'
 
 # START_DESCRIBE V-36736
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-36736
 
 end

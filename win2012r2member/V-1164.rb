@@ -29,9 +29,15 @@ Value: 1
 If the value for "Domain Member: Digitally encrypt or sign secure channel data (always)" is set to "Enabled", this can be NA (see V-6831).'
 
 # START_DESCRIBE V-1164
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'SignSecureChannel',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Services\Netlogon\Parameters',
+    }) do
+      its("SignSecureChannel") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-1164
 
 end

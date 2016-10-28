@@ -21,9 +21,11 @@ control 'V-40193' do
 Determine if virtual guest operating systems have been registered in a vulnerability and asset management system as separate assets.  If they have not, this is a finding.'
 
 # START_DESCRIBE V-40193
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-40193
 
 end

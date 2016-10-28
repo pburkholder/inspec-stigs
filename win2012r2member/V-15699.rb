@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-15699
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'DisableWcnUi',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Windows\WCN\UI',
+    }) do
+      its("DisableWcnUi") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-15699
 
 end

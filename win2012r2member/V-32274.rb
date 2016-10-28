@@ -42,9 +42,11 @@ If the value for the "Thumbprint" field is not
 "99:c4:94:ec:e4:fc:09:3e:ee:13:c4:d6:5b:1b:1e:01:b9:b5:d4:34", this is a finding.'
 
 # START_DESCRIBE V-32274
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-32274
 
 end

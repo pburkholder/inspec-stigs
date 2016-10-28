@@ -29,9 +29,15 @@ Value Type: REG_SZ
 Value: 5 (or less)'
 
 # START_DESCRIBE V-4442
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'ScreenSaverGracePeriod',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Microsoft\Windows',
+    }) do
+      its("ScreenSaverGracePeriod") { should eq 5 }
+    end
+
 # STOP_DESCRIBE V-4442
 
 end

@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 3'
 
 # START_DESCRIBE V-3454
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'MinEncryptionLevel',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Windows',
+    }) do
+      its("MinEncryptionLevel") { should eq 3 }
+    end
+
 # STOP_DESCRIBE V-3454
 
 end

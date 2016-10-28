@@ -27,9 +27,11 @@ Compare the AuditPol settings with the following.  If the system does not audit 
 Account Management -> Computer Account Management - Success'
 
 # START_DESCRIBE V-26531
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26531
 
 end

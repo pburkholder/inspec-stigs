@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 0'
 
 # START_DESCRIBE V-16020
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'CEIPEnable',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\SQMClient\Windows',
+    }) do
+      its("CEIPEnable") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-16020
 
 end

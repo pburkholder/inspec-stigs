@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 0'
 
 # START_DESCRIBE V-4448
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'NoGPOListChanges',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Windows\Group',
+    }) do
+      its("NoGPOListChanges") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-4448
 
 end

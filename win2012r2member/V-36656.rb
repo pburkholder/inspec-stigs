@@ -32,9 +32,15 @@ Applications requiring continuous, real-time screen display (e.g., network manag
 -The display station (e.g., keyboard, monitor, etc.) is located in a controlled access area.'
 
 # START_DESCRIBE V-36656
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'ScreenSaveActive',
+      hive: 'HKEY_CURRENT_USER',
+      key:  '\Software\Policies\Microsoft\Windows\Control',
+    }) do
+      its("ScreenSaveActive") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-36656
 
 end

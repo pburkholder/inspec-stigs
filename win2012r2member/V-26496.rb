@@ -30,9 +30,11 @@ Administrators
 If the site has an Auditors group that further limits this privilege this would not be a finding.'
 
 # START_DESCRIBE V-26496
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26496
 
 end

@@ -31,9 +31,15 @@ Value Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-43241
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'MSAOptional',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System',
+    }) do
+      its("MSAOptional") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-43241
 
 end

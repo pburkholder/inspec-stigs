@@ -24,9 +24,11 @@ Navigate to Local Computer Policy -> Computer Configuration -> Windows Settings 
 If the "Account lockout duration" is not set to "0", requiring an administrator to unlock the account, this is a finding.'
 
 # START_DESCRIBE V-1099
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1099
 
 end

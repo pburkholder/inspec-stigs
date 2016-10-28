@@ -19,9 +19,11 @@ control 'V-36666' do
   tag checktext: 'Determine whether the site has a policy that requires SAs be trained for all operating systems running on systems under their control.  If  the site does not have a policy requiring SAs be trained for all operating systems under their control, this is a finding.'
 
 # START_DESCRIBE V-36666
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-36666
 
 end

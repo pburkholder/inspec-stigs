@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 0'
 
 # START_DESCRIBE V-14243
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'EnumerateAdministrators',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\CredUI',
+    }) do
+      its("EnumerateAdministrators") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-14243
 
 end

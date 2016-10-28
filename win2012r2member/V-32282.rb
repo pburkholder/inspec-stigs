@@ -38,9 +38,11 @@ CREATOR OWNER - Full Control (Subkeys only)
 ALL APPLICATION PACKAGES - Read'
 
 # START_DESCRIBE V-32282
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-32282
 
 end

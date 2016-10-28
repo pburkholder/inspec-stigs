@@ -27,9 +27,11 @@ Compare the AuditPol settings with the following.  If the system does not audit 
 System -> Security System Extension - Success'
 
 # START_DESCRIBE V-26555
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26555
 
 end

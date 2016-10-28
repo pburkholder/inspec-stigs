@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 2'
 
 # START_DESCRIBE V-36677
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'UseWindowsUpdate',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\Servicing',
+    }) do
+      its("UseWindowsUpdate") { should eq 2 }
+    end
+
 # STOP_DESCRIBE V-36677
 
 end

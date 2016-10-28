@@ -28,9 +28,11 @@ If any accounts or groups other than the following are granted the "Force shutdo
 Administrators'
 
 # START_DESCRIBE V-26488
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26488
 
 end

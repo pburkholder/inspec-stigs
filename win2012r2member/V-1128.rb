@@ -23,9 +23,11 @@ Security configuration tools that are integrated into Windows, such as Group Pol
 If an alternate method is used to configure a system (e.g., manually using the DISA Windows Security STIGs, etc.) and the same configured result is achieved, this is acceptable.'
 
 # START_DESCRIBE V-1128
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1128
 
 end

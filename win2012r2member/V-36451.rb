@@ -19,9 +19,11 @@ control 'V-36451' do
   tag checktext: 'Determine whether site policy prohibits the use of applications that access the Internet, such as web browsers, or with potential Internet sources, such as email, by administrative accounts, except as necessary for local service administration.  If it does not, this is a finding.'
 
 # START_DESCRIBE V-36451
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-36451
 
 end

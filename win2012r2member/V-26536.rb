@@ -27,9 +27,11 @@ Compare the AuditPol settings with the following.  If the system does not audit 
 Account Management -> Security Group Management - Failure'
 
 # START_DESCRIBE V-26536
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26536
 
 end

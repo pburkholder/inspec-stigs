@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 0x000000ff (255)'
 
 # START_DESCRIBE V-2374
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'NoDriveTypeAutoRun',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer',
+    }) do
+      its("NoDriveTypeAutoRun") { should eq 0x000000ff }
+    end
+
 # STOP_DESCRIBE V-2374
 
 end

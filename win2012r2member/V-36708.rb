@@ -31,9 +31,15 @@ Value: 1 (Enabled)
 If location services are approved for the system by the organization, this may be set to "Disabled" (0).  This must be documented with the ISSO.'
 
 # START_DESCRIBE V-36708
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'DisableLocation',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Windows\LocationAndSensors',
+    }) do
+      its("DisableLocation") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-36708
 
 end

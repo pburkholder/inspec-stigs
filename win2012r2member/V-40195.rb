@@ -25,9 +25,11 @@ If the BIOS or system controller supports user-level access in addition to super
 If access is restricted by way of hypervisor configuration settings on virtual systems, this would not be a finding.'
 
 # START_DESCRIBE V-40195
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-40195
 
 end

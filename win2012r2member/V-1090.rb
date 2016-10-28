@@ -31,9 +31,11 @@ Value Type:  REG_SZ
 Value:  4 (or less)'
 
 # START_DESCRIBE V-1090
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1090
 
 end

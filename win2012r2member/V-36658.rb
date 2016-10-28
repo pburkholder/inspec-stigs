@@ -19,9 +19,11 @@ control 'V-36658' do
   tag checktext: 'Review the necessary documentation that identifies the members of the Administrators group.  If a list of all users belonging to the Administrators group is not maintained with the ISSO, this is a finding.'
 
 # START_DESCRIBE V-36658
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-36658
 
 end

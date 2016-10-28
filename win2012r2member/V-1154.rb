@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 0'
 
 # START_DESCRIBE V-1154
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'DisableCAD',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\System',
+    }) do
+      its("DisableCAD") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-1154
 
 end

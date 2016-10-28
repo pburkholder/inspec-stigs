@@ -25,9 +25,11 @@ If any files with these extensions exist, this is a finding.
 This does not apply to server-based applications that have a requirement for .p12 certificate files (e.g., Oracle Wallet Manager).  Some applications create files with extensions of .p12 that are NOT certificate installation files.  Removal of noncertificate installation files from systems is not required.  These must be documented with the ISSO.'
 
 # START_DESCRIBE V-15823
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-15823
 
 end

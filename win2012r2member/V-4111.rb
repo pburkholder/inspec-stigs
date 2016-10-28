@@ -29,9 +29,15 @@ Value Type: REG_DWORD
 Value: 0'
 
 # START_DESCRIBE V-4111
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'EnableICMPRedirect',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Services\Tcpip\Parameters',
+    }) do
+      its("EnableICMPRedirect") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-4111
 
 end

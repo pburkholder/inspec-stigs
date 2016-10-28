@@ -19,9 +19,11 @@ control 'V-1070' do
   tag checktext: 'Verify servers are located in controlled access areas that are accessible only to authorized personnel.  If systems are not adequately protected, this is a finding.'
 
 # START_DESCRIBE V-1070
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1070
 
 end

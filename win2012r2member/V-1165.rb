@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 0'
 
 # START_DESCRIBE V-1165
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'DisablePasswordChange',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Services\Netlogon\Parameters',
+    }) do
+      its("DisablePasswordChange") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-1165
 
 end

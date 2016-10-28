@@ -29,9 +29,15 @@ Value: 1 (Lock Workstation) or 2 (Force Logoff)
 If configuring this on servers causes issues such as terminating users remote sessions and the site has a policy in place that any other sessions on the servers such as administrative console logons, are manually locked or logged off when unattended or not in use, this would be acceptable. This must be documented with the ISSO.'
 
 # START_DESCRIBE V-1157
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'SCRemoveOption',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Microsoft\Windows',
+    }) do
+      its("SCRemoveOption") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-1157
 
 end

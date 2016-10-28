@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 0x0000ea60 (60000)'
 
 # START_DESCRIBE V-3457
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'MaxDisconnectionTime',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Windows',
+    }) do
+      its("MaxDisconnectionTime") { should eq 0x0000ea60 }
+    end
+
 # STOP_DESCRIBE V-3457
 
 end

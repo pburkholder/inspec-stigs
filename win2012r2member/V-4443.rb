@@ -53,9 +53,15 @@ System\CurrentControlSet\Services\Sysmonlog
 Legitimate applications may add entries to this registry value. If an application requires these entries to function properly and is documented with the ISSO, this would not be a finding.  Documentation must contain supporting information from the vendors instructions.'
 
 # START_DESCRIBE V-4443
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'Machine',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedPaths',
+    }) do
+      its("Machine") { should eq see }
+    end
+
 # STOP_DESCRIBE V-4443
 
 end

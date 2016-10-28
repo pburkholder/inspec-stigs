@@ -37,9 +37,11 @@ Backup Operators - Read (This key only)
 LOCAL SERVICE - Read'
 
 # START_DESCRIBE V-1152
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1152
 
 end

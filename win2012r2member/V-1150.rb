@@ -26,9 +26,11 @@ If the value for "Password must meet complexity requirements" is not set to "Ena
 Note: If an external password filter is in use that enforces all 4 character types and requires this setting be set to "Disabled", this would not be considered a finding. If this setting does not affect the use of an external password filter, it must be enabled for fallback purposes.'
 
 # START_DESCRIBE V-1150
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1150
 
 end

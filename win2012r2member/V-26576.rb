@@ -29,9 +29,15 @@ Type: REG_DWORD
 Value: 3'
 
 # START_DESCRIBE V-26576
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'IPHTTPS_ClientState',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Windows\TCPIP\v6Transition\IPHTTPS\IPHTTPSInterface',
+    }) do
+      its("IPHTTPS_ClientState") { should eq 3 }
+    end
+
 # STOP_DESCRIBE V-26576
 
 end

@@ -52,9 +52,11 @@ Implementation guidance for AppLocker is available in the NSA paper "Application
 https://www.nsa.gov/ia/mitigation_guidance/security_configuration_guides/operating_systems.shtml'
 
 # START_DESCRIBE V-57637
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-57637
 
 end

@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-14261
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'DontSearchWindowsUpdate',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Windows\DriverSearching',
+    }) do
+      its("DontSearchWindowsUpdate") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-14261
 
 end

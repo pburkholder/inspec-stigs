@@ -25,9 +25,11 @@ If the following is installed and not disabled, this is a finding:
 Fax (fax)'
 
 # START_DESCRIBE V-26600
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26600
 
 end

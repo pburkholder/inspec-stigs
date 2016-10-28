@@ -30,9 +30,11 @@ Local Service
 Network Service'
 
 # START_DESCRIBE V-26503
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26503
 
 end

@@ -36,9 +36,11 @@ The following PowerShell command may be used on domain controllers to list accou
 Search-ADAccount -PasswordNeverExpires -UsersOnly'
 
 # START_DESCRIBE V-6840
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-6840
 
 end

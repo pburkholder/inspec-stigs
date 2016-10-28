@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 3'
 
 # START_DESCRIBE V-14270
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'ScanWithAntiVirus',
+      hive: 'HKEY_CURRENT_USER',
+      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments',
+    }) do
+      its("ScanWithAntiVirus") { should eq 3 }
+    end
+
 # STOP_DESCRIBE V-14270
 
 end

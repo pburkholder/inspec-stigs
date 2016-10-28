@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-1173
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'ProtectionMode',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Control\Session',
+    }) do
+      its("ProtectionMode") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-1173
 
 end

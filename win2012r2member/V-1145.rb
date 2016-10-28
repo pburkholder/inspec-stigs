@@ -36,9 +36,15 @@ Type: REG_SZ
 Value: 0'
 
 # START_DESCRIBE V-1145
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'AutoAdminLogon',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Microsoft\Windows',
+    }) do
+      its("AutoAdminLogon") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-1145
 
 end

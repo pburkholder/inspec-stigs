@@ -27,9 +27,11 @@ Compare the AuditPol settings with the following.  If the system does not audit 
 Object Access -> Removable Storage - Failure'
 
 # START_DESCRIBE V-36667
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-36667
 
 end

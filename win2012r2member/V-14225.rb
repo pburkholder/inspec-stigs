@@ -30,9 +30,11 @@ If the built-in Administrator account has a date older than one year in the "Pws
 If any system administrators has left the organization within the last year and the "PwsdLastSetTime" field reflects the built-in Administrator account password was not changed at that time, this is a finding.'
 
 # START_DESCRIBE V-14225
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-14225
 
 end

@@ -24,9 +24,11 @@ Navigate to Local Computer Policy -> Computer Configuration -> Windows Settings 
 If the value for "Network security: Force logoff when logon hours expire" is not set to "Enabled", this is a finding.'
 
 # START_DESCRIBE V-3380
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-3380
 
 end

@@ -29,9 +29,11 @@ Unsupported Service Packs/Releases:
 Windows 2012 - any release candidates or versions prior to the initial release.'
 
 # START_DESCRIBE V-1073
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1073
 
 end

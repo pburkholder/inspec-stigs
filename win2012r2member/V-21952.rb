@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 0'
 
 # START_DESCRIBE V-21952
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'allownullsessionfallback',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Control\LSA\MSV1_0',
+    }) do
+      its("allownullsessionfallback") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-21952
 
 end

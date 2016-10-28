@@ -19,9 +19,11 @@ control 'V-40172' do
   tag checktext: 'Determine if system-level information backups are protected from destruction and stored in a physically secure location.  If they are not, this is a finding.'
 
 # START_DESCRIBE V-40172
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-40172
 
 end

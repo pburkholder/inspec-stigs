@@ -27,9 +27,15 @@ Value Type: REG_MULTI_SZ
 Value: (Blank)'
 
 # START_DESCRIBE V-4445
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'Optional',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Control\Session',
+    }) do
+      its("Optional") { should eq (Blank) }
+    end
+
 # STOP_DESCRIBE V-4445
 
 end

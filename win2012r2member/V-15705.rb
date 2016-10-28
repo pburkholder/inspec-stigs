@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-15705
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'DCSettingIndex',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Power\PowerSettings\0e796bdb-100d-47d6-a2d5-f7d2daa51f51',
+    }) do
+      its("DCSettingIndex") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-15705
 
 end

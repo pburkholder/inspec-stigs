@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-15682
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'DisableEnclosureDownload',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Internet',
+    }) do
+      its("DisableEnclosureDownload") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-15682
 
 end

@@ -35,9 +35,11 @@ The default location is the "%SystemRoot%\SYSTEM32\WINEVT\LOGS" directory.  They
 If the permissions for these files are not as restrictive as the ACLs listed, this is a finding.'
 
 # START_DESCRIBE V-36723
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-36723
 
 end

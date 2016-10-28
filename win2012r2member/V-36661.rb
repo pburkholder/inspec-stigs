@@ -19,9 +19,11 @@ control 'V-36661' do
   tag checktext: 'Verify the site has a policy to ensure passwords for manually managed application/service accounts are at least 15 characters in length.  If such a policy does not exist or has not been implemented, this is a finding.'
 
 # START_DESCRIBE V-36661
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-36661
 
 end

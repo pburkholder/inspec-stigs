@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-1166
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'EnableSecuritySignature',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Services\LanmanWorkstation\Parameters',
+    }) do
+      its("EnableSecuritySignature") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-1166
 
 end

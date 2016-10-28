@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 0'
 
 # START_DESCRIBE V-36698
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'Enabled',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\SOFTWARE\Policies\Microsoft\Biometrics',
+    }) do
+      its("Enabled") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-36698
 
 end

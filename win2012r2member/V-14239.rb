@@ -31,9 +31,15 @@ Value Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-14239
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'EnableSecureUIAPaths',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\System',
+    }) do
+      its("EnableSecureUIAPaths") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-14239
 
 end

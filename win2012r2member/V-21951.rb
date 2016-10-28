@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-21951
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'UseMachineId',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Control\LSA',
+    }) do
+      its("UseMachineId") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-21951
 
 end

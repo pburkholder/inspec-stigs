@@ -27,9 +27,15 @@ Type: REG_SZ
 Value: Disabled'
 
 # START_DESCRIBE V-26578
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'Teredo_State',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Windows\TCPIP\v6Transition',
+    }) do
+      its("Teredo_State") { should eq Disabled }
+    end
+
 # STOP_DESCRIBE V-26578
 
 end

@@ -29,9 +29,15 @@ Value Type: REG_DWORD
 Value: 300000 (or less)'
 
 # START_DESCRIBE V-4113
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'KeepAliveTime',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Services\Tcpip\Parameters',
+    }) do
+      its("KeepAliveTime") { should eq 300000 }
+    end
+
 # STOP_DESCRIBE V-4113
 
 end

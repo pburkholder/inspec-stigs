@@ -19,9 +19,11 @@ control 'V-57641' do
   tag checktext: 'If the data owner has a strict requirement for ensuring data integrity and confidentiality is maintained at every step of the data transfer and handling process, verify protection methods such as TLS, encrypted VPNs, or IPSEC have been implemented.  If protection methods have not been implemented, this is a finding.'
 
 # START_DESCRIBE V-57641
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-57641
 
 end

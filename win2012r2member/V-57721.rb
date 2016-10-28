@@ -30,9 +30,11 @@ TrustedInstaller - Full Control
 Administrators, SYSTEM, Users, ALL APPLICATION PACKAGES - Read & Execute'
 
 # START_DESCRIBE V-57721
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-57721
 
 end

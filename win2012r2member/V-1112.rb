@@ -52,9 +52,11 @@ If any enabled accounts have not been logged on to within the past 35 days, this
 Inactive accounts that have been reviewed and deemed to be required must be documented with the ISSO.'
 
 # START_DESCRIBE V-1112
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1112
 
 end

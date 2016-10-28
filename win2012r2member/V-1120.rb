@@ -35,9 +35,11 @@ ftp>
 If the command response indicates that an anonymous FTP login was permitted, this is a finding.'
 
 # START_DESCRIBE V-1120
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1120
 
 end

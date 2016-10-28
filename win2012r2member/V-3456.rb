@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-3456
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'DeleteTempDirsOnExit',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Windows',
+    }) do
+      its("DeleteTempDirsOnExit") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-3456
 
 end

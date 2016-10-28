@@ -25,9 +25,11 @@ If the following is installed and not disabled, this is a finding:
 Simple TCP/IP Services (simptcp)'
 
 # START_DESCRIBE V-26605
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26605
 
 end

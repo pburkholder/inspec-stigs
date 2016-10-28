@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-16021
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'NoImplicitFeedback',
+      hive: 'HKEY_CURRENT_USER',
+      key:  '\Software\Policies\Microsoft\Assistance\Client\1.0',
+    }) do
+      its("NoImplicitFeedback") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-16021
 
 end

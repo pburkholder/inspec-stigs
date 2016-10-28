@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 30 (or less, but not 0)'
 
 # START_DESCRIBE V-3373
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'MaximumPasswordAge',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Services\Netlogon\Parameters',
+    }) do
+      its("MaximumPasswordAge") { should eq 30 }
+    end
+
 # STOP_DESCRIBE V-3373
 
 end

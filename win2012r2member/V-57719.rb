@@ -19,9 +19,11 @@ control 'V-57719' do
   tag checktext: 'Verify the operating system, at a minimum, off-loads audit records of interconnected systems in real time and off-loads standalone systems weekly.  If it does not, this is a finding.'
 
 # START_DESCRIBE V-57719
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-57719
 
 end

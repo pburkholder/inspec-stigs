@@ -29,9 +29,15 @@ Type: REG_DWORD
 Value: 0x00008000 (32768) (or greater)'
 
 # START_DESCRIBE V-26582
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'MaxSize',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\SOFTWARE\Policies\Microsoft\Windows\EventLog\System',
+    }) do
+      its("MaxSize") { should eq 0x00008000 }
+    end
+
 # STOP_DESCRIBE V-26582
 
 end

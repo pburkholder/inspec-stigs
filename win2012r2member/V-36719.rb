@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 0'
 
 # START_DESCRIBE V-36719
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'AllowUnencryptedTraffic',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Windows\WinRM\Service',
+    }) do
+      its("AllowUnencryptedTraffic") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-36719
 
 end

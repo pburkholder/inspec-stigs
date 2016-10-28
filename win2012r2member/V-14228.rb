@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 0'
 
 # START_DESCRIBE V-14228
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'AuditBaseObjects',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Control\Lsa',
+    }) do
+      its("AuditBaseObjects") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-14228
 
 end

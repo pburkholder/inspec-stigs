@@ -20,9 +20,11 @@ control 'V-1072' do
 If shared accounts exist, this is a finding.'
 
 # START_DESCRIBE V-1072
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1072
 
 end

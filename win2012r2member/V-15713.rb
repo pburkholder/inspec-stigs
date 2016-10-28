@@ -33,9 +33,11 @@ Type:  REG_DWORD
 Value:  1 or 2 = a Finding'
 
 # START_DESCRIBE V-15713
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-15713
 
 end

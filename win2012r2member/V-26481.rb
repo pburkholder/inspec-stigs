@@ -24,9 +24,11 @@ Navigate to Local Computer Policy -> Computer Configuration -> Windows Settings 
 If any accounts or groups are granted the "Create permanent shared objects" user right, this is a finding.'
 
 # START_DESCRIBE V-26481
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26481
 
 end

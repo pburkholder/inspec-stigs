@@ -27,9 +27,11 @@ Compare the AuditPol settings with the following.  If the system does not audit 
 Policy Change -> Authorization Policy Change - Failure'
 
 # START_DESCRIBE V-57635
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-57635
 
 end

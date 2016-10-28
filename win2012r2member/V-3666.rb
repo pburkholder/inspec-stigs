@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 0x20080000 (537395200)'
 
 # START_DESCRIBE V-3666
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'NTLMMinServerSec',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Control\Lsa\MSV1_0',
+    }) do
+      its("NTLMMinServerSec") { should eq 0x20080000 }
+    end
+
 # STOP_DESCRIBE V-3666
 
 end

@@ -34,9 +34,11 @@ Domain Admins Group
 If any accounts or groups are defined for the "Deny log on as a service" user right on non-domain-joined systems, this is a finding.'
 
 # START_DESCRIBE V-26484
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26484
 
 end

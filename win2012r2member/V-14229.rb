@@ -27,9 +27,15 @@ Value Type: REG_BINARY
 Value: 0'
 
 # START_DESCRIBE V-14229
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'FullPrivilegeAuditing',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Control\Lsa',
+    }) do
+      its("FullPrivilegeAuditing") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-14229
 
 end

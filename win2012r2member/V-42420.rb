@@ -21,9 +21,11 @@ control 'V-42420' do
 The configuration requirements will be determined by the applicable firewall STIG.'
 
 # START_DESCRIBE V-42420
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-42420
 
 end

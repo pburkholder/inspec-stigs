@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 2'
 
 # START_DESCRIBE V-14268
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'SaveZoneInformation',
+      hive: 'HKEY_CURRENT_USER',
+      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments',
+    }) do
+      its("SaveZoneInformation") { should eq 2 }
+    end
+
 # STOP_DESCRIBE V-14268
 
 end

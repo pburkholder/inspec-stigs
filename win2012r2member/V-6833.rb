@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-6833
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'RequireSecuritySignature',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Services\LanManServer\Parameters',
+    }) do
+      its("RequireSecuritySignature") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-6833
 
 end

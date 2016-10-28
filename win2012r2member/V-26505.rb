@@ -28,9 +28,11 @@ If any accounts or groups other than the following are granted the "Shut down th
 Administrators'
 
 # START_DESCRIBE V-26505
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26505
 
 end

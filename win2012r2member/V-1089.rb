@@ -60,9 +60,15 @@ Any OS versions that do not support the full text version must state the followi
 Deviations are not permitted except as authorized by the Deputy Assistant Secretary of Defense for Information and Identity Assurance.'
 
 # START_DESCRIBE V-1089
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'LegalNoticeText',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\System',
+    }) do
+      its("LegalNoticeText") { should eq See }
+    end
+
 # STOP_DESCRIBE V-1089
 
 end

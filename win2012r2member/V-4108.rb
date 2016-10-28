@@ -31,9 +31,15 @@ Value Type: REG_DWORD
 Value: 90 (or less)'
 
 # START_DESCRIBE V-4108
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'WarningLevel',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Services\Eventlog\Security',
+    }) do
+      its("WarningLevel") { should eq 90 }
+    end
+
 # STOP_DESCRIBE V-4108
 
 end

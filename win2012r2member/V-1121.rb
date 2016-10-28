@@ -36,9 +36,11 @@ ftp> dir
 If the FTP session indicates access to areas of the operating system such as Program Files and Windows directories, this is a finding.'
 
 # START_DESCRIBE V-1121
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1121
 
 end

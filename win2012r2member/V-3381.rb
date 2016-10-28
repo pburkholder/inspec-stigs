@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-3381
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'LDAPClientIntegrity',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Services\LDAP',
+    }) do
+      its("LDAPClientIntegrity") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-3381
 
 end

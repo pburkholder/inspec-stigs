@@ -24,9 +24,11 @@ Navigate to Local Computer Policy -> Computer Configuration -> Windows Settings 
 If the value for "Accounts: Guest account status" is not set to "Disabled", this is a finding.'
 
 # START_DESCRIBE V-1113
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1113
 
 end

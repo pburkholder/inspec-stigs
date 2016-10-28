@@ -23,9 +23,11 @@ Also verify that the Service "McAfee Framework Service" is running.
 If either of these conditions does not exist, this is a finding.'
 
 # START_DESCRIBE V-15505
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-15505
 
 end

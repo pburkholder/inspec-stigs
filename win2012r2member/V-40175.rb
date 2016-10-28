@@ -25,9 +25,11 @@ If the antivirus program signature file is not dated within the past 7 days, thi
 The version numbers and the date of the signature file can generally be checked by starting the antivirus program. The information may appear in the antivirus window or be available in the Help > About window. The location varies from product to product.'
 
 # START_DESCRIBE V-40175
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-40175
 
 end

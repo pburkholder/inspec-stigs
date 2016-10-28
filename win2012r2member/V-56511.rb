@@ -22,9 +22,11 @@ Run "Services.msc".
 If the Windows Error Reporting Service does not have a Status of "Running" and a Start Type of "Automatic", this is a finding.'
 
 # START_DESCRIBE V-56511
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-56511
 
 end

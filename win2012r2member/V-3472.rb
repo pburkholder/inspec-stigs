@@ -44,9 +44,15 @@ For DoD organizations, the US Naval Observatory operates stratum 1 time servers,
 Domain-joined systems are automatically configured to synchronize with domain controllers, and it would not be a finding unless this is changed.'
 
 # START_DESCRIBE V-3472
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'Type',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\W32time\Parameters',
+    }) do
+      its("Type") { should eq Possible }
+    end
+
 # STOP_DESCRIBE V-3472
 
 end

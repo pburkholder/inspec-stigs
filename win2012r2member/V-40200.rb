@@ -27,9 +27,11 @@ Compare the AuditPol settings with the following.  If the system does not audit 
 Object Access -> Central Policy Staging - Failure'
 
 # START_DESCRIBE V-40200
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-40200
 
 end

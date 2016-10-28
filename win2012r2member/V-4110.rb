@@ -29,9 +29,15 @@ Value Type: REG_DWORD
 Value: 2'
 
 # START_DESCRIBE V-4110
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'DisableIPSourceRouting',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Services\Tcpip\Parameters',
+    }) do
+      its("DisableIPSourceRouting") { should eq 2 }
+    end
+
 # STOP_DESCRIBE V-4110
 
 end

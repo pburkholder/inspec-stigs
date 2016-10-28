@@ -31,9 +31,15 @@ Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-36680
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'NoUseStoreOpenWith',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\SOFTWARE\Policies\Microsoft\Windows\Explorer',
+    }) do
+      its("NoUseStoreOpenWith") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-36680
 
 end

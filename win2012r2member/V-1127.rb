@@ -35,9 +35,11 @@ If prohibited accounts are members of the local Administrators group, this is a 
 The built-in Administrator account or other required administrative accounts would not be a finding.'
 
 # START_DESCRIBE V-1127
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1127
 
 end

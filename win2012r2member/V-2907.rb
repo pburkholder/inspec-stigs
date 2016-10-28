@@ -21,9 +21,11 @@ control 'V-2907' do
 A properly configured HBSS Policy Auditor 5.2 or later File Integrity Monitor (FIM) module will meet the requirement for file integrity checking. The Asset module within HBSS does not meet this requirement.'
 
 # START_DESCRIBE V-2907
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-2907
 
 end

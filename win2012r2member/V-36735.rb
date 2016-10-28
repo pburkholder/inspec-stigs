@@ -19,9 +19,11 @@ control 'V-36735' do
   tag checktext: 'Verify the organization has an automated process to install security-related software updates.  If it does not, this is a finding.'
 
 # START_DESCRIBE V-36735
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-36735
 
 end

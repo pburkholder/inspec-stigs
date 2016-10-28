@@ -36,9 +36,15 @@ Value: 4 (Prompt for consent)
 1 (Prompt for credentials on the secure desktop)'
 
 # START_DESCRIBE V-14235
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'ConsentPromptBehaviorAdmin',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\System',
+    }) do
+      its("ConsentPromptBehaviorAdmin") { should eq 4 }
+    end
+
 # STOP_DESCRIBE V-14235
 
 end

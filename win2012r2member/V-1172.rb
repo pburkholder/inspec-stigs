@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 14 (or greater)'
 
 # START_DESCRIBE V-1172
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'PasswordExpiryWarning',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Microsoft\Windows',
+    }) do
+      its("PasswordExpiryWarning") { should eq 14 }
+    end
+
 # STOP_DESCRIBE V-1172
 
 end

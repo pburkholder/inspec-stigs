@@ -42,9 +42,11 @@ If the value for the "Thumbprint" field is not
 "7d:a8:e8:42:96:ee:23:88:18:ee:42:72:87:77:45:08:b2:6d:09:4a", this is a finding.'
 
 # START_DESCRIBE V-40237
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-40237
 
 end

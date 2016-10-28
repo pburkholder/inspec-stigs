@@ -31,9 +31,15 @@ Value Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-43238
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'NoLockScreenSlideshow',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\SOFTWARE\Policies\Microsoft\Windows\Personalization',
+    }) do
+      its("NoLockScreenSlideshow") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-43238
 
 end

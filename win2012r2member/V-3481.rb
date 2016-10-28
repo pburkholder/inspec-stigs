@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-3481
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'PreventCodecDownload',
+      hive: 'HKEY_CURRENT_USER',
+      key:  '\Software\Policies\Microsoft\WindowsMediaPlayer',
+    }) do
+      its("PreventCodecDownload") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-3481
 
 end

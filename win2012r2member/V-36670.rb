@@ -19,9 +19,11 @@ control 'V-36670' do
   tag checktext: 'Determine whether audit logs are reviewed on a predetermined schedule.  If audit logs are not reviewed on a regular basis, this is a finding.'
 
 # START_DESCRIBE V-36670
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-36670
 
 end

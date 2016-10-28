@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-26283
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'RestrictAnonymousSAM',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Control\Lsa',
+    }) do
+      its("RestrictAnonymousSAM") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-26283
 
 end

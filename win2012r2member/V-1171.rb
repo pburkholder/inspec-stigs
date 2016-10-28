@@ -27,9 +27,15 @@ Value Type: REG_SZ
 Value: 0'
 
 # START_DESCRIBE V-1171
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'AllocateDASD',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Microsoft\Windows',
+    }) do
+      its("AllocateDASD") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-1171
 
 end

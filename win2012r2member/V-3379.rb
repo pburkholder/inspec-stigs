@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-3379
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'NoLMHash',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Control\Lsa',
+    }) do
+      its("NoLMHash") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-3379
 
 end

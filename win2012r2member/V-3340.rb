@@ -29,9 +29,15 @@ Value Type: REG_MULTI_SZ
 Value: (Blank)'
 
 # START_DESCRIBE V-3340
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'NullSessionShares',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Services\LanManServer\Parameters',
+    }) do
+      its("NullSessionShares") { should eq (Blank) }
+    end
+
 # STOP_DESCRIBE V-3340
 
 end

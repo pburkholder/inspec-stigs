@@ -30,9 +30,11 @@ If any application accounts listed that are manually managed and have a date old
 If any system administrators with knowledge of application account passwords have left the organization within the last year and the "PwsdLastSetTime" field reflects that application account passwords were not changed at that time, this is a finding.'
 
 # START_DESCRIBE V-36662
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-36662
 
 end

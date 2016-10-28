@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-6831
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'RequireSignOrSeal',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Services\Netlogon\Parameters',
+    }) do
+      its("RequireSignOrSeal") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-6831
 
 end

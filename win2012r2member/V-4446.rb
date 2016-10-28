@@ -27,9 +27,15 @@ Value Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-4446
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'AuthenticodeEnabled',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers',
+    }) do
+      its("AuthenticodeEnabled") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-4446
 
 end

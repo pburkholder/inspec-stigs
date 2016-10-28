@@ -29,9 +29,15 @@ Value: 1
 Warning: Clients with this setting enabled will not be able to communicate via digitally encrypted or signed protocols with servers that do not support these algorithms.  Both the browser and web server must be configured to use TLS, or the browser will not be able to connect to a secure site.'
 
 # START_DESCRIBE V-3383
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'Enabled',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy',
+    }) do
+      its("Enabled") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-3383
 
 end

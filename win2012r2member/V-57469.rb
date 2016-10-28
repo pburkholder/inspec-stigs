@@ -27,9 +27,11 @@ Type:  REG_DWORD
 Value:  0'
 
 # START_DESCRIBE V-57469
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-57469
 
 end

@@ -35,9 +35,11 @@ If any accounts have "No" in the "PswdRequired" column, this is a finding.
 Some built-in or application-generated accounts (e.g., Guest, IWAM_, IUSR, etc.) may not have this flag set, even though there are passwords present.  It can be set by entering the following on a command line: "Net user <account_name> /passwordreq:yes".'
 
 # START_DESCRIBE V-7002
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-7002
 
 end

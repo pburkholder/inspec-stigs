@@ -43,9 +43,11 @@ If the value for the "Thumbprint" field is not
 The thumbprint referenced applies to NIPRNet, see PKE documentation for other networks.'
 
 # START_DESCRIBE V-32272
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-32272
 
 end

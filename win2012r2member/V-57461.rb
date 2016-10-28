@@ -31,9 +31,11 @@ Type:  REG_DWORD
 Value:  0x000004d0 (1232)'
 
 # START_DESCRIBE V-57461
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-57461
 
 end

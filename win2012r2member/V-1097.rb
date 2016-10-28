@@ -24,9 +24,11 @@ Navigate to Local Computer Policy -> Computer Configuration -> Windows Settings 
 If the "Account lockout threshold" is "0" or more than "3" attempts, this is a finding.'
 
 # START_DESCRIBE V-1097
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-1097
 
 end

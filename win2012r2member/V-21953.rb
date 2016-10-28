@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 0'
 
 # START_DESCRIBE V-21953
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'AllowOnlineID',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Control\LSA\pku2u',
+    }) do
+      its("AllowOnlineID") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-21953
 
 end

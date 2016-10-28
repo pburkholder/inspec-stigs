@@ -29,9 +29,15 @@ Value Type: REG_DWORD
 Value: 3'
 
 # START_DESCRIBE V-14232
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'NoDefaultExempt',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Services\IPSEC',
+    }) do
+      its("NoDefaultExempt") { should eq 3 }
+    end
+
 # STOP_DESCRIBE V-14232
 
 end

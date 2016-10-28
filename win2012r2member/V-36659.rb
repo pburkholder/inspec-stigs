@@ -21,9 +21,11 @@ control 'V-36659' do
 If users with administrative privileges do not have separate accounts for administrative functions and standard user functions, this is a finding.'
 
 # START_DESCRIBE V-36659
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-36659
 
 end

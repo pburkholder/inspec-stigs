@@ -19,9 +19,11 @@ control 'V-36671' do
   tag checktext: 'Determine whether audit data is retained for at least one year.  If the audit data is not retained for at least a year, this is a finding.'
 
 # START_DESCRIBE V-36671
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-36671
 
 end

@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 0'
 
 # START_DESCRIBE V-15683
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'PreXPSP2ShellProtocolBehavior',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer',
+    }) do
+      its("PreXPSP2ShellProtocolBehavior") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-15683
 
 end

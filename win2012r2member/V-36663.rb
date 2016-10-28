@@ -23,9 +23,11 @@ Restrictions may also be applied through hypervisor configuration settings for v
 If access is restricted by way of hypervisor configuration settings on virtual systems, this would not be a finding.'
 
 # START_DESCRIBE V-36663
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-36663
 
 end

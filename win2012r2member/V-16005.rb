@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-16005
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'NoDisconnect',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer',
+    }) do
+      its("NoDisconnect") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-16005
 
 end

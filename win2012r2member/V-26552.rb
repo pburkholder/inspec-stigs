@@ -27,9 +27,11 @@ Compare the AuditPol settings with the following.  If the system does not audit 
 System -> IPsec Driver - Failure'
 
 # START_DESCRIBE V-26552
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26552
 
 end

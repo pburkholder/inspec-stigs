@@ -29,9 +29,15 @@ Value Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-3479
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'SafeDllSearchMode',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\System\CurrentControlSet\Control\Session',
+    }) do
+      its("SafeDllSearchMode") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-3479
 
 end

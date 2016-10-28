@@ -30,9 +30,11 @@ Administrators
 NT Service\WdiServiceHost'
 
 # START_DESCRIBE V-26501
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26501
 
 end

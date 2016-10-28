@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 1'
 
 # START_DESCRIBE V-21960
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'NC_StdDomainUserSetLocation',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Windows\Network',
+    }) do
+      its("NC_StdDomainUserSetLocation") { should eq 1 }
+    end
+
 # STOP_DESCRIBE V-21960
 
 end

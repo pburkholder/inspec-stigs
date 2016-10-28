@@ -50,9 +50,11 @@ Note: Windows Server 2012 R2 added new built-in security groups, including "Loca
 Microsoft Security Advisory Patch 2871997 adds the new security groups to Windows Server 2012.'
 
 # START_DESCRIBE V-26486
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26486
 
 end

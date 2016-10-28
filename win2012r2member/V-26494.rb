@@ -24,9 +24,11 @@ Navigate to Local Computer Policy -> Computer Configuration -> Windows Settings 
 If any accounts or groups are granted the "Lock pages in memory" user right, this is a finding.'
 
 # START_DESCRIBE V-26494
-  describe file('') do
-    it { should match // }
-  end
+      describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+
 # STOP_DESCRIBE V-26494
 
 end

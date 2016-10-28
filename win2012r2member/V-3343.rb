@@ -27,9 +27,15 @@ Type: REG_DWORD
 Value: 0'
 
 # START_DESCRIBE V-3343
-  describe file('') do
-    it { should match // }
-  end
+  
+    describe registry_key({
+      name: 'fAllowToGetHelp',
+      hive: 'HKEY_LOCAL_MACHINE',
+      key:  '\Software\Policies\Microsoft\Windows',
+    }) do
+      its("fAllowToGetHelp") { should eq 0 }
+    end
+
 # STOP_DESCRIBE V-3343
 
 end
