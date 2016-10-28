@@ -5,13 +5,31 @@
 require 'nokogiri'
 require 'optparse'
 
-def inspec_check(text, parse_reg=true)
-  return <<-CHECKDOC
-  describe file('') do
-    it "is a pending example"
-    # it { should match // }
+def inspec_check(text:, parse_reg:true, id:nil)
+  if parse_reg and text.match(/Registry +Hive: HKEY/) then
+#    p text, id.value
+    hive = text.match /^Registry Hive: +(HKEY[A-Z_]*)/
+    path = text.match /^Registry Path: +(\S+)/
+    name = text.match /^Value Name: +(\S+)/
+    value= text.match /^Value: +(\S+)/
+    return <<-REGISTRY_DOC
+
+    describe registry_key({
+      name: '#{name.captures[0]}',
+      hive: '#{hive.captures[0]}',
+      key:  '#{path.captures[0].chomp('\\')}',
+    }) do
+      its("#{name.captures[0]}") { should eq #{value.captures[0]} }
+    end
+    REGISTRY_DOC
+  else
+    return <<-CHECKDOC
+    describe file('') do
+      it "is a pending example"
+      # it { should match // }
+    end
+    CHECKDOC
   end
-  CHECKDOC
 end
 
 # Gather inputs from CLI for input and destination files
@@ -90,7 +108,7 @@ control '#{id}' do
   tag checktext: '#{checktxt.text.gsub("'", "")}'
 
 # START_DESCRIBE #{id}
-  #{inspec_check(checktxt.text)}
+  #{inspec_check(text: checktxt.text, id: id)}
 # STOP_DESCRIBE #{id}
 
 end
