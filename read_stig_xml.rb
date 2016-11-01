@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # Example:
-#  ./read_stig_xml.rb -i src/xml/U_Windows_2012_and_2012_R2_MS_STIG_V2R5_Manual-xccdf.xml -d win2012r2member
+#  ./read_stig_xml.rb -i src/xml/U_Windows_2012_and_2012_R2_MS_STIG_V2R5_Manual-xccdf.xml -d win2012r2member/controls
 require 'nokogiri'
 require 'optparse'
 
