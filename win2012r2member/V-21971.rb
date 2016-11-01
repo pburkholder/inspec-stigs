@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'DisableInventory',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\AppCompat',
+      key:  'Software\Policies\Microsoft\Windows\AppCompat',
     }) do
       its("DisableInventory") { should eq 1 }
     end

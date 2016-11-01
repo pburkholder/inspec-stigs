@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'AddPrinterDrivers',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\Print\Providers\LanMan',
+      key:  'System\CurrentControlSet\Control\Print\Providers\LanMan Print Services\Servers',
     }) do
       its("AddPrinterDrivers") { should eq 1 }
     end

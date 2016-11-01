@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'NoDisconnect',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\Explorer',
     }) do
       its("NoDisconnect") { should eq 1 }
     end

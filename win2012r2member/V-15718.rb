@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'NoHeapTerminationOnCorruption',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\Explorer',
+      key:  'Software\Policies\Microsoft\Windows\Explorer',
     }) do
       its("NoHeapTerminationOnCorruption") { should eq 0 }
     end

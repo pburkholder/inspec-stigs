@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'NoDispScrSavPage',
       hive: 'HKEY_CURRENT_USER',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\System',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\System',
     }) do
       its("NoDispScrSavPage") { should eq 1 }
     end

@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'EnableUserControl',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\Installer',
+      key:  'Software\Policies\Microsoft\Windows\Installer',
     }) do
       its("EnableUserControl") { should eq 0 }
     end

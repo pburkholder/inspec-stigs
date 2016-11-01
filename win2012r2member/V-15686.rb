@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'DisableLUAPatching',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\Installer',
+      key:  'Software\Policies\Microsoft\Windows\Installer',
     }) do
       its("DisableLUAPatching") { should eq 1 }
     end

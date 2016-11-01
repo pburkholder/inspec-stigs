@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'AllowUnencryptedTraffic',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\WinRM\Service',
+      key:  'Software\Policies\Microsoft\Windows\WinRM\Service',
     }) do
       its("AllowUnencryptedTraffic") { should eq 0 }
     end

@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'allownullsessionfallback',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\LSA\MSV1_0',
+      key:  'System\CurrentControlSet\Control\LSA\MSV1_0',
     }) do
       its("allownullsessionfallback") { should eq 0 }
     end

@@ -33,7 +33,7 @@ Value: 2'
     describe registry_key({
       name: 'DisableIPSourceRouting',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Services\Tcpip\Parameters',
+      key:  'System\CurrentControlSet\Services\Tcpip\Parameters',
     }) do
       its("DisableIPSourceRouting") { should eq 2 }
     end

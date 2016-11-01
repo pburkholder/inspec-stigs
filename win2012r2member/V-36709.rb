@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'AllowBasicAuthInClear',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Internet',
+      key:  'Software\Policies\Microsoft\Internet Explorer\Feeds',
     }) do
       its("AllowBasicAuthInClear") { should eq 0 }
     end

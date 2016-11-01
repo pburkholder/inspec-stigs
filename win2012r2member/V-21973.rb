@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'NoAutoplayfornonVolume',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\Explorer',
+      key:  'Software\Policies\Microsoft\Windows\Explorer',
     }) do
       its("NoAutoplayfornonVolume") { should eq 1 }
     end

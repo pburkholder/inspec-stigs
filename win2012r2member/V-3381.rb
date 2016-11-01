@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'LDAPClientIntegrity',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Services\LDAP',
+      key:  'System\CurrentControlSet\Services\LDAP',
     }) do
       its("LDAPClientIntegrity") { should eq 1 }
     end

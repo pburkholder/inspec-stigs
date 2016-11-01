@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'PreventHandwritingErrorReports',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\HandwritingErrorReports',
+      key:  'Software\Policies\Microsoft\Windows\HandwritingErrorReports',
     }) do
       its("PreventHandwritingErrorReports") { should eq 1 }
     end

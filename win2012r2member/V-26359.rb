@@ -39,7 +39,7 @@ Automated tools may only search for the titles defined above. If a site-defined 
     describe registry_key({
       name: 'LegalNoticeCaption',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\System',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\System',
     }) do
       its("LegalNoticeCaption") { should eq See }
     end

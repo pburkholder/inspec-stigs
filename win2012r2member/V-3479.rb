@@ -33,7 +33,7 @@ Value: 1'
     describe registry_key({
       name: 'SafeDllSearchMode',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\Session',
+      key:  'System\CurrentControlSet\Control\Session Manager',
     }) do
       its("SafeDllSearchMode") { should eq 1 }
     end

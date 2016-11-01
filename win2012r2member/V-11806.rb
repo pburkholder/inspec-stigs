@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'DontDisplayLastUserName',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\System',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\System',
     }) do
       its("DontDisplayLastUserName") { should eq 1 }
     end

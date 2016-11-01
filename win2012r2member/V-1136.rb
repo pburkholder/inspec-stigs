@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'EnableForcedLogoff',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Services\LanManServer\Parameters',
+      key:  'System\CurrentControlSet\Services\LanManServer\Parameters',
     }) do
       its("EnableForcedLogoff") { should eq 1 }
     end

@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'DisableSendGenericDriverNotFoundToWER',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\DeviceInstall\Settings',
+      key:  'Software\Policies\Microsoft\Windows\DeviceInstall\Settings',
     }) do
       its("DisableSendGenericDriverNotFoundToWER") { should eq 1 }
     end

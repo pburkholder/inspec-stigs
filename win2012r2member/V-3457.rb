@@ -31,7 +31,7 @@ Value: 0x0000ea60 (60000)'
     describe registry_key({
       name: 'MaxDisconnectionTime',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows',
+      key:  'Software\Policies\Microsoft\Windows NT\Terminal Services',
     }) do
       its("MaxDisconnectionTime") { should eq 0x0000ea60 }
     end

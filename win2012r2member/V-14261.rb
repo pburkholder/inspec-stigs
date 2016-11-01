@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'DontSearchWindowsUpdate',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\DriverSearching',
+      key:  'Software\Policies\Microsoft\Windows\DriverSearching',
     }) do
       its("DontSearchWindowsUpdate") { should eq 1 }
     end

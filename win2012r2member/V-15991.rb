@@ -35,7 +35,7 @@ Value: 0'
     describe registry_key({
       name: 'EnableUIADesktopToggle',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\System',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\System',
     }) do
       its("EnableUIADesktopToggle") { should eq 0 }
     end

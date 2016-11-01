@@ -35,7 +35,7 @@ If location services are approved for the system by the organization, this may b
     describe registry_key({
       name: 'DisableLocation',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\LocationAndSensors',
+      key:  'Software\Policies\Microsoft\Windows\LocationAndSensors',
     }) do
       its("DisableLocation") { should eq 1 }
     end

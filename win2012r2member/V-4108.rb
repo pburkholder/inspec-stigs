@@ -35,7 +35,7 @@ Value: 90 (or less)'
     describe registry_key({
       name: 'WarningLevel',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Services\Eventlog\Security',
+      key:  'System\CurrentControlSet\Services\Eventlog\Security',
     }) do
       its("WarningLevel") { should eq 90 }
     end

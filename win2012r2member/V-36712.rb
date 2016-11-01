@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'AllowBasic',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\WinRM\Client',
+      key:  'Software\Policies\Microsoft\Windows\WinRM\Client',
     }) do
       its("AllowBasic") { should eq 0 }
     end

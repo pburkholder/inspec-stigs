@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'FullPrivilegeAuditing',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\Lsa',
+      key:  'System\CurrentControlSet\Control\Lsa',
     }) do
       its("FullPrivilegeAuditing") { should eq 0 }
     end

@@ -31,7 +31,7 @@ Value: Disabled'
     describe registry_key({
       name: 'Teredo_State',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\TCPIP\v6Transition',
+      key:  'Software\Policies\Microsoft\Windows\TCPIP\v6Transition',
     }) do
       its("Teredo_State") { should eq Disabled }
     end

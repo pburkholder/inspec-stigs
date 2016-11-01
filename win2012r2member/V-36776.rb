@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'NoCloudApplicationNotification',
       hive: 'HKEY_CURRENT_USER',
-      key:  '\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications',
+      key:  'SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications',
     }) do
       its("NoCloudApplicationNotification") { should eq 1 }
     end

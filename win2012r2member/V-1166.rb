@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'EnableSecuritySignature',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Services\LanmanWorkstation\Parameters',
+      key:  'System\CurrentControlSet\Services\LanmanWorkstation\Parameters',
     }) do
       its("EnableSecuritySignature") { should eq 1 }
     end

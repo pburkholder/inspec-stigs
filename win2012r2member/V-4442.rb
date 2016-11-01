@@ -33,7 +33,7 @@ Value: 5 (or less)'
     describe registry_key({
       name: 'ScreenSaverGracePeriod',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows',
+      key:  'Software\Microsoft\Windows NT\CurrentVersion\Winlogon',
     }) do
       its("ScreenSaverGracePeriod") { should eq 5 }
     end

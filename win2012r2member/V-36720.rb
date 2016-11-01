@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'DisableRunAs',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\WinRM\Service',
+      key:  'Software\Policies\Microsoft\Windows\WinRM\Service',
     }) do
       its("DisableRunAs") { should eq 1 }
     end

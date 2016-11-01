@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'DisablePasswordChange',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Services\Netlogon\Parameters',
+      key:  'System\CurrentControlSet\Services\Netlogon\Parameters',
     }) do
       its("DisablePasswordChange") { should eq 0 }
     end

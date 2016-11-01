@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'BlockUserInputMethodsForSignIn',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Control',
+      key:  'Software\Policies\Microsoft\Control Panel\International',
     }) do
       its("BlockUserInputMethodsForSignIn") { should eq 1 }
     end

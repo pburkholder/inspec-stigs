@@ -48,7 +48,7 @@ Domain-joined systems are automatically configured to synchronize with domain co
     describe registry_key({
       name: 'Type',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\W32time\Parameters',
+      key:  'Software\Policies\Microsoft\W32time\Parameters',
     }) do
       its("Type") { should eq Possible }
     end

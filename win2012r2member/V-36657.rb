@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'ScreenSaverIsSecure',
       hive: 'HKEY_CURRENT_USER',
-      key:  '\Software\Policies\Microsoft\Windows\Control',
+      key:  'Software\Policies\Microsoft\Windows\Control Panel\Desktop',
     }) do
       its("ScreenSaverIsSecure") { should eq 1 }
     end

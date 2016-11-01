@@ -33,7 +33,7 @@ Value: (Blank)'
     describe registry_key({
       name: 'NullSessionShares',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Services\LanManServer\Parameters',
+      key:  'System\CurrentControlSet\Services\LanManServer\Parameters',
     }) do
       its("NullSessionShares") { should eq (Blank) }
     end

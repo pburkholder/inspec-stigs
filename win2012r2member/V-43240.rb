@@ -35,7 +35,7 @@ Value: 1'
     describe registry_key({
       name: 'DontDisplayNetworkSelectionUI',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\SOFTWARE\Policies\Microsoft\Windows\System',
+      key:  'SOFTWARE\Policies\Microsoft\Windows\System',
     }) do
       its("DontDisplayNetworkSelectionUI") { should eq 1 }
     end

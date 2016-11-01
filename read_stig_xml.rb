@@ -9,7 +9,7 @@ def inspec_check(text:, parse_reg:true, id:nil)
   if parse_reg and text.match(/Registry +Hive: HKEY/) then
 #    p text, id.value
     hive = text.match /^Registry Hive: +(HKEY[A-Z_]*)/
-    path = text.match /^Registry Path: +(\S+)/
+    path = text.match /^Registry Path: +\\?([\S ]+)\\/
     name = text.match /^Value Name: +(\S+)/
     value= text.match /^Value: +(\S+)/
     return <<-REGISTRY_DOC
@@ -17,7 +17,7 @@ def inspec_check(text:, parse_reg:true, id:nil)
     describe registry_key({
       name: '#{name.captures[0]}',
       hive: '#{hive.captures[0]}',
-      key:  '#{path.captures[0].chomp('\\')}',
+      key:  '#{path.captures[0]}',
     }) do
       its("#{name.captures[0]}") { should eq #{value.captures[0]} }
     end

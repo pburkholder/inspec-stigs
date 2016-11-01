@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'AuditBaseObjects',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\Lsa',
+      key:  'System\CurrentControlSet\Control\Lsa',
     }) do
       its("AuditBaseObjects") { should eq 0 }
     end

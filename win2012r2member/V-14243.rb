@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'EnumerateAdministrators',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\CredUI',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\CredUI',
     }) do
       its("EnumerateAdministrators") { should eq 0 }
     end

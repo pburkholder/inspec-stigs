@@ -33,7 +33,7 @@ Value: 300000 (or less)'
     describe registry_key({
       name: 'KeepAliveTime',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Services\Tcpip\Parameters',
+      key:  'System\CurrentControlSet\Services\Tcpip\Parameters',
     }) do
       its("KeepAliveTime") { should eq 300000 }
     end

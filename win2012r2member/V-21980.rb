@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'NoDataExecutionPrevention',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\Explorer',
+      key:  'Software\Policies\Microsoft\Windows\Explorer',
     }) do
       its("NoDataExecutionPrevention") { should eq 0 }
     end

@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'AllocateDASD',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows',
+      key:  'Software\Microsoft\Windows NT\CurrentVersion\Winlogon',
     }) do
       its("AllocateDASD") { should eq 0 }
     end

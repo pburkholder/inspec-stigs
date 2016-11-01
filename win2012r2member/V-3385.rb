@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'ObCaseInsensitive',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\Session',
+      key:  'System\CurrentControlSet\Control\Session Manager\Kernel',
     }) do
       its("ObCaseInsensitive") { should eq 1 }
     end

@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'fAllowUnsolicited',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows',
+      key:  'Software\Policies\Microsoft\Windows NT\Terminal Services',
     }) do
       its("fAllowUnsolicited") { should eq 0 }
     end

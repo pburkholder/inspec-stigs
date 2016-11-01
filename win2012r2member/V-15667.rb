@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'NC_AllowNetBridge_NLA',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\Network',
+      key:  'Software\Policies\Microsoft\Windows\Network Connections',
     }) do
       its("NC_AllowNetBridge_NLA") { should eq 0 }
     end

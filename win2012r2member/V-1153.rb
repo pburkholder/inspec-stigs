@@ -31,7 +31,7 @@ Value: 5'
     describe registry_key({
       name: 'LmCompatibilityLevel',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\Lsa',
+      key:  'System\CurrentControlSet\Control\Lsa',
     }) do
       its("LmCompatibilityLevel") { should eq 5 }
     end

@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'DisableWcnUi',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\WCN\UI',
+      key:  'Software\Policies\Microsoft\Windows\WCN\UI',
     }) do
       its("DisableWcnUi") { should eq 1 }
     end

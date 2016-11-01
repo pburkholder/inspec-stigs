@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'LimitBlankPasswordUse',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\Lsa',
+      key:  'System\CurrentControlSet\Control\Lsa',
     }) do
       its("LimitBlankPasswordUse") { should eq 1 }
     end

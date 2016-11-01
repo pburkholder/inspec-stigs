@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'SCENoApplyLegacyAuditPolicy',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\Lsa',
+      key:  'System\CurrentControlSet\Control\Lsa',
     }) do
       its("SCENoApplyLegacyAuditPolicy") { should eq 1 }
     end

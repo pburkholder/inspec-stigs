@@ -33,7 +33,7 @@ If the value for "Domain Member: Digitally encrypt or sign secure channel data (
     describe registry_key({
       name: 'SignSecureChannel',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Services\Netlogon\Parameters',
+      key:  'System\CurrentControlSet\Services\Netlogon\Parameters',
     }) do
       its("SignSecureChannel") { should eq 1 }
     end

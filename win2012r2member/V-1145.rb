@@ -40,7 +40,7 @@ Value: 0'
     describe registry_key({
       name: 'AutoAdminLogon',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows',
+      key:  'Software\Microsoft\Windows NT\CurrentVersion\Winlogon',
     }) do
       its("AutoAdminLogon") { should eq 0 }
     end

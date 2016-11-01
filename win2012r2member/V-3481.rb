@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'PreventCodecDownload',
       hive: 'HKEY_CURRENT_USER',
-      key:  '\Software\Policies\Microsoft\WindowsMediaPlayer',
+      key:  'Software\Policies\Microsoft\WindowsMediaPlayer',
     }) do
       its("PreventCodecDownload") { should eq 1 }
     end

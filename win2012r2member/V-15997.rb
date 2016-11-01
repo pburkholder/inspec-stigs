@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'fDisableCcm',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows',
+      key:  'Software\Policies\Microsoft\Windows NT\Terminal Services',
     }) do
       its("fDisableCcm") { should eq 1 }
     end

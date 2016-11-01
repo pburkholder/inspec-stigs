@@ -31,7 +31,7 @@ Value: 14 (or greater)'
     describe registry_key({
       name: 'PasswordExpiryWarning',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows',
+      key:  'Software\Microsoft\Windows NT\CurrentVersion\Winlogon',
     }) do
       its("PasswordExpiryWarning") { should eq 14 }
     end

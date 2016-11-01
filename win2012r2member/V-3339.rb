@@ -41,7 +41,7 @@ Legitimate applications may add entries to this registry value.  If an applicati
     describe registry_key({
       name: 'Machine',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedExactPaths',
+      key:  'System\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedExactPaths',
     }) do
       its("Machine") { should eq see }
     end

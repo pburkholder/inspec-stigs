@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'Enabled',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\SOFTWARE\Policies\Microsoft\Biometrics',
+      key:  'SOFTWARE\Policies\Microsoft\Biometrics',
     }) do
       its("Enabled") { should eq 0 }
     end

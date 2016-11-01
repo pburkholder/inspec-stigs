@@ -33,7 +33,7 @@ This setting may prevent a system from being joined to a domain if not configure
     describe registry_key({
       name: 'RequireStrongKey',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Services\Netlogon\Parameters',
+      key:  'System\CurrentControlSet\Services\Netlogon\Parameters',
     }) do
       its("RequireStrongKey") { should eq 1 }
     end

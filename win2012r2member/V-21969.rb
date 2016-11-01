@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'EnableQueryRemoteServer',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\ScriptedDiagnosticsProvider\Policy',
+      key:  'Software\Policies\Microsoft\Windows\ScriptedDiagnosticsProvider\Policy',
     }) do
       its("EnableQueryRemoteServer") { should eq 0 }
     end

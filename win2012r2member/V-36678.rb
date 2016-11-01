@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'DriverServerSelection',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\DriverSearching',
+      key:  'Software\Policies\Microsoft\Windows\DriverSearching',
     }) do
       its("DriverServerSelection") { should eq 1 }
     end

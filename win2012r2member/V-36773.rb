@@ -31,7 +31,7 @@ Value: 0x00000384 (900) (or less)'
     describe registry_key({
       name: 'InactivityTimeoutSecs',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\System',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\System',
     }) do
       its("InactivityTimeoutSecs") { should eq 0x00000384 }
     end

@@ -33,7 +33,7 @@ Value: 0'
     describe registry_key({
       name: 'EnableICMPRedirect',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Services\Tcpip\Parameters',
+      key:  'System\CurrentControlSet\Services\Tcpip\Parameters',
     }) do
       its("EnableICMPRedirect") { should eq 0 }
     end

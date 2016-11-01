@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'PreXPSP2ShellProtocolBehavior',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\Explorer',
     }) do
       its("PreXPSP2ShellProtocolBehavior") { should eq 0 }
     end

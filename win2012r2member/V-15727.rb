@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'NoInPlaceSharing',
       hive: 'HKEY_CURRENT_USER',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\Explorer',
     }) do
       its("NoInPlaceSharing") { should eq 1 }
     end

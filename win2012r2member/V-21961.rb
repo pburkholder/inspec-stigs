@@ -31,7 +31,7 @@ Value: Enabled'
     describe registry_key({
       name: 'Force_Tunneling',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\TCPIP\v6Transition',
+      key:  'Software\Policies\Microsoft\Windows\TCPIP\v6Transition',
     }) do
       its("Force_Tunneling") { should eq Enabled }
     end

@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'CEIPEnable',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\SQMClient\Windows',
+      key:  'Software\Policies\Microsoft\SQMClient\Windows',
     }) do
       its("CEIPEnable") { should eq 0 }
     end

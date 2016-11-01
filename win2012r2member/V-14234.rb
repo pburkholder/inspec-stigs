@@ -35,7 +35,7 @@ Value: 1'
     describe registry_key({
       name: 'FilterAdministratorToken',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\System',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\System',
     }) do
       its("FilterAdministratorToken") { should eq 1 }
     end

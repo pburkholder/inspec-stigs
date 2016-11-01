@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'SearchOrderConfig',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\DriverSearching',
+      key:  'Software\Policies\Microsoft\Windows\DriverSearching',
     }) do
       its("SearchOrderConfig") { should eq 0 }
     end

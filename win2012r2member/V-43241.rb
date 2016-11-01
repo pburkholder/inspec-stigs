@@ -35,7 +35,7 @@ Value: 1'
     describe registry_key({
       name: 'MSAOptional',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System',
+      key:  'SOFTWARE\Microsoft\Windows\CurrentVersion\Policies',
     }) do
       its("MSAOptional") { should eq 1 }
     end

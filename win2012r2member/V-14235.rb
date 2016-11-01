@@ -40,7 +40,7 @@ Value: 4 (Prompt for consent)
     describe registry_key({
       name: 'ConsentPromptBehaviorAdmin',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\System',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\System',
     }) do
       its("ConsentPromptBehaviorAdmin") { should eq 4 }
     end

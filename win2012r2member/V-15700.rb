@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'AllowRemoteRPC',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\DeviceInstall\Settings',
+      key:  'Software\Policies\Microsoft\Windows\DeviceInstall\Settings',
     }) do
       its("AllowRemoteRPC") { should eq 0 }
     end

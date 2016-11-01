@@ -34,7 +34,7 @@ Value: 0'
     describe registry_key({
       name: 'AllowLLTDIOOndomain',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\LLTD',
+      key:  'Software\Policies\Microsoft\Windows\LLTD',
     }) do
       its("AllowLLTDIOOndomain") { should eq 0 }
     end

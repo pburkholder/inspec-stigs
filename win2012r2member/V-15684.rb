@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'SafeForScripting',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\Installer',
+      key:  'Software\Policies\Microsoft\Windows\Installer',
     }) do
       its("SafeForScripting") { should eq 0 }
     end

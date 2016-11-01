@@ -33,7 +33,7 @@ Value: 3'
     describe registry_key({
       name: 'NoDefaultExempt',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Services\IPSEC',
+      key:  'System\CurrentControlSet\Services\IPSEC',
     }) do
       its("NoDefaultExempt") { should eq 3 }
     end

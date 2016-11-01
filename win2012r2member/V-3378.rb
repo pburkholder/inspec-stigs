@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'ForceGuest',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\Lsa',
+      key:  'System\CurrentControlSet\Control\Lsa',
     }) do
       its("ForceGuest") { should eq 0 }
     end

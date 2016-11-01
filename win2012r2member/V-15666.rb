@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'Disabled',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Peernet',
+      key:  'Software\Policies\Microsoft\Peernet',
     }) do
       its("Disabled") { should eq 1 }
     end

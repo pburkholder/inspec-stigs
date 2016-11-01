@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'DisableEnclosureDownload',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Internet',
+      key:  'Software\Policies\Microsoft\Internet Explorer\Feeds',
     }) do
       its("DisableEnclosureDownload") { should eq 1 }
     end

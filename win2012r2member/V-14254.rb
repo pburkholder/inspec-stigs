@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'EnableAuthEpResolution',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\SOFTWARE\Policies\Microsoft\Windows',
+      key:  'SOFTWARE\Policies\Microsoft\Windows NT\Rpc',
     }) do
       its("EnableAuthEpResolution") { should eq 1 }
     end

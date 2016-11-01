@@ -31,7 +31,7 @@ Value: scrnsave.scr'
     describe registry_key({
       name: 'SCRNSAVE.EXE',
       hive: 'HKEY_CURRENT_USER',
-      key:  '\Software\Policies\Microsoft\Windows\Control',
+      key:  'Software\Policies\Microsoft\Windows\Control Panel\Desktop',
     }) do
       its("SCRNSAVE.EXE") { should eq scrnsave.scr }
     end

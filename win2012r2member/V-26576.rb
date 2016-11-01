@@ -33,7 +33,7 @@ Value: 3'
     describe registry_key({
       name: 'IPHTTPS_ClientState',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\TCPIP\v6Transition\IPHTTPS\IPHTTPSInterface',
+      key:  'Software\Policies\Microsoft\Windows\TCPIP\v6Transition\IPHTTPS\IPHTTPSInterface',
     }) do
       its("IPHTTPS_ClientState") { should eq 3 }
     end

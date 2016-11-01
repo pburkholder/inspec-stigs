@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'DriverLoadPolicy',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Policies\EarlyLaunch',
+      key:  'System\CurrentControlSet\Policies\EarlyLaunch',
     }) do
       its("DriverLoadPolicy") { should eq 1 }
     end

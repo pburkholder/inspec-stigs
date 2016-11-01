@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'AllowOnlineID',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\LSA\pku2u',
+      key:  'System\CurrentControlSet\Control\LSA\pku2u',
     }) do
       its("AllowOnlineID") { should eq 0 }
     end

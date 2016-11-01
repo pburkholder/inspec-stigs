@@ -34,7 +34,7 @@ Value: 0'
     describe registry_key({
       name: 'AllowRspndrOndomain',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\LLTD',
+      key:  'Software\Policies\Microsoft\Windows\LLTD',
     }) do
       its("AllowRspndrOndomain") { should eq 0 }
     end

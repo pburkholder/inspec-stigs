@@ -31,7 +31,7 @@ Value: 3'
     describe registry_key({
       name: 'MinEncryptionLevel',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows',
+      key:  'Software\Policies\Microsoft\Windows NT\Terminal Services',
     }) do
       its("MinEncryptionLevel") { should eq 3 }
     end

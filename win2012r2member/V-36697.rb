@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'AllowAllTrustedApps',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\Appx',
+      key:  'Software\Policies\Microsoft\Windows\Appx',
     }) do
       its("AllowAllTrustedApps") { should eq 1 }
     end

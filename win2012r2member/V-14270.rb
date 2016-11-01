@@ -31,7 +31,7 @@ Value: 3'
     describe registry_key({
       name: 'ScanWithAntiVirus',
       hive: 'HKEY_CURRENT_USER',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\Attachments',
     }) do
       its("ScanWithAntiVirus") { should eq 3 }
     end

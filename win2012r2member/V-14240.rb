@@ -35,7 +35,7 @@ Value: 1'
     describe registry_key({
       name: 'EnableLUA',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\System',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\System',
     }) do
       its("EnableLUA") { should eq 1 }
     end

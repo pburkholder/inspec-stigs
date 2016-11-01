@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'DisablePcaUI',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\AppCompat',
+      key:  'Software\Policies\Microsoft\Windows\AppCompat',
     }) do
       its("DisablePcaUI") { should eq 0 }
     end

@@ -31,7 +31,7 @@ Value: (Blank)'
     describe registry_key({
       name: 'Optional',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\Session',
+      key:  'System\CurrentControlSet\Control\Session Manager\Subsystems',
     }) do
       its("Optional") { should eq (Blank) }
     end

@@ -33,7 +33,7 @@ Warning: Clients with this setting enabled will not be able to communicate via d
     describe registry_key({
       name: 'Enabled',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy',
+      key:  'System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy',
     }) do
       its("Enabled") { should eq 1 }
     end

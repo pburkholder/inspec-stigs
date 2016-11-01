@@ -31,7 +31,7 @@ Value: Disabled'
     describe registry_key({
       name: 'ISATAP_State',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\TCPIP\v6Transition',
+      key:  'Software\Policies\Microsoft\Windows\TCPIP\v6Transition',
     }) do
       its("ISATAP_State") { should eq Disabled }
     end

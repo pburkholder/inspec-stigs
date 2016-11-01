@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'DisableHTTPPrinting',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows',
+      key:  'Software\Policies\Microsoft\Windows NT\Printers',
     }) do
       its("DisableHTTPPrinting") { should eq 1 }
     end

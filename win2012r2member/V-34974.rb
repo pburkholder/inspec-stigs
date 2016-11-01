@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'AlwaysInstallElevated',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\Installer',
+      key:  'Software\Policies\Microsoft\Windows\Installer',
     }) do
       its("AlwaysInstallElevated") { should eq 0 }
     end

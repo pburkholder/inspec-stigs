@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'NoInternetOpenWith',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\Explorer',
     }) do
       its("NoInternetOpenWith") { should eq 1 }
     end

@@ -33,7 +33,7 @@ Value: 1'
     describe registry_key({
       name: 'DisableAutoupdate',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\WindowsMediaPlayer',
+      key:  'Software\Policies\Microsoft\WindowsMediaPlayer',
     }) do
       its("DisableAutoupdate") { should eq 1 }
     end

@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'SmbServerNameHardeningLevel',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Services\LanmanServer\Parameters',
+      key:  'System\CurrentControlSet\Services\LanmanServer\Parameters',
     }) do
       its("SmbServerNameHardeningLevel") { should eq 0 }
     end

@@ -31,7 +31,7 @@ Value: 0'
     describe registry_key({
       name: 'EnumerateLocalUsers',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\System',
+      key:  'Software\Policies\Microsoft\Windows\System',
     }) do
       its("EnumerateLocalUsers") { should eq 0 }
     end

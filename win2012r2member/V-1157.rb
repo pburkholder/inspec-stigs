@@ -33,7 +33,7 @@ If configuring this on servers causes issues such as terminating users remote se
     describe registry_key({
       name: 'SCRemoveOption',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows',
+      key:  'Software\Microsoft\Windows NT\CurrentVersion\Winlogon',
     }) do
       its("SCRemoveOption") { should eq 1 }
     end

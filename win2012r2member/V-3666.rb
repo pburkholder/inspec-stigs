@@ -31,7 +31,7 @@ Value: 0x20080000 (537395200)'
     describe registry_key({
       name: 'NTLMMinServerSec',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\Lsa\MSV1_0',
+      key:  'System\CurrentControlSet\Control\Lsa\MSV1_0',
     }) do
       its("NTLMMinServerSec") { should eq 0x20080000 }
     end

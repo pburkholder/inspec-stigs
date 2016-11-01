@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'MicrosoftEventVwrDisableLinks',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\EventViewer',
+      key:  'Software\Policies\Microsoft\EventViewer',
     }) do
       its("MicrosoftEventVwrDisableLinks") { should eq 1 }
     end

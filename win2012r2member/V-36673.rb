@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'EnableIPAutoConfigurationLimits',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Services\Tcpip\Parameters',
+      key:  'System\CurrentControlSet\Services\Tcpip\Parameters',
     }) do
       its("EnableIPAutoConfigurationLimits") { should eq 1 }
     end

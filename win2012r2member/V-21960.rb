@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'NC_StdDomainUserSetLocation',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\Network',
+      key:  'Software\Policies\Microsoft\Windows\Network Connections',
     }) do
       its("NC_StdDomainUserSetLocation") { should eq 1 }
     end

@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'DisablePasswordReveal',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\CredUI',
+      key:  'Software\Policies\Microsoft\Windows\CredUI',
     }) do
       its("DisablePasswordReveal") { should eq 1 }
     end

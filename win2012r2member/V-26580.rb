@@ -33,7 +33,7 @@ Value: 0x00030000 (196608) (or greater)'
     describe registry_key({
       name: 'MaxSize',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security',
+      key:  'SOFTWARE\Policies\Microsoft\Windows\EventLog\Security',
     }) do
       its("MaxSize") { should eq 0x00030000 }
     end

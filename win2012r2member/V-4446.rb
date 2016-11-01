@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'AuthenticodeEnabled',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers',
+      key:  'Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers',
     }) do
       its("AuthenticodeEnabled") { should eq 1 }
     end

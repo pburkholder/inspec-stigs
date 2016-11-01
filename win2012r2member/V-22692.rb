@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'NoAutorun',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer',
+      key:  'SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer',
     }) do
       its("NoAutorun") { should eq 1 }
     end

@@ -64,7 +64,7 @@ Deviations are not permitted except as authorized by the Deputy Assistant Secret
     describe registry_key({
       name: 'LegalNoticeText',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\System',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\System',
     }) do
       its("LegalNoticeText") { should eq See }
     end

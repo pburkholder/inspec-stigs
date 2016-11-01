@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'DisableOnline',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\WMDRM',
+      key:  'Software\Policies\Microsoft\WMDRM',
     }) do
       its("DisableOnline") { should eq 1 }
     end

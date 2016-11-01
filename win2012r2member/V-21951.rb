@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'UseMachineId',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\LSA',
+      key:  'System\CurrentControlSet\Control\LSA',
     }) do
       its("UseMachineId") { should eq 1 }
     end

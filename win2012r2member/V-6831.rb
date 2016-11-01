@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'RequireSignOrSeal',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Services\Netlogon\Parameters',
+      key:  'System\CurrentControlSet\Services\Netlogon\Parameters',
     }) do
       its("RequireSignOrSeal") { should eq 1 }
     end

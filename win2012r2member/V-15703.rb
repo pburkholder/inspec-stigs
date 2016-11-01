@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'DontPromptForWindowsUpdate',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\DriverSearching',
+      key:  'Software\Policies\Microsoft\Windows\DriverSearching',
     }) do
       its("DontPromptForWindowsUpdate") { should eq 1 }
     end

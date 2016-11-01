@@ -35,7 +35,7 @@ Value: 0'
     describe registry_key({
       name: 'DisableFlashConfigRegistrar',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\Software\Policies\Microsoft\Windows\WCN\Registrars',
+      key:  'Software\Policies\Microsoft\Windows\WCN\Registrars',
     }) do
       its("DisableFlashConfigRegistrar") { should eq 0 }
     end

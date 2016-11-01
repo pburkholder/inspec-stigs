@@ -35,7 +35,7 @@ Value: 1'
     describe registry_key({
       name: 'NoLockScreenSlideshow',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\SOFTWARE\Policies\Microsoft\Windows\Personalization',
+      key:  'SOFTWARE\Policies\Microsoft\Windows\Personalization',
     }) do
       its("NoLockScreenSlideshow") { should eq 1 }
     end

@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'NoImplicitFeedback',
       hive: 'HKEY_CURRENT_USER',
-      key:  '\Software\Policies\Microsoft\Assistance\Client\1.0',
+      key:  'Software\Policies\Microsoft\Assistance\Client\1.0',
     }) do
       its("NoImplicitFeedback") { should eq 1 }
     end

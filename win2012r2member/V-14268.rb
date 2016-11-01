@@ -31,7 +31,7 @@ Value: 2'
     describe registry_key({
       name: 'SaveZoneInformation',
       hive: 'HKEY_CURRENT_USER',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\Attachments',
     }) do
       its("SaveZoneInformation") { should eq 2 }
     end

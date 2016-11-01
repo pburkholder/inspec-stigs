@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'DisableDomainCreds',
       hive: 'HKEY_LOCAL_MACHINE',
-      key:  '\System\CurrentControlSet\Control\Lsa',
+      key:  'System\CurrentControlSet\Control\Lsa',
     }) do
       its("DisableDomainCreds") { should eq 1 }
     end

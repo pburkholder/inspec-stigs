@@ -31,7 +31,7 @@ Value: 1'
     describe registry_key({
       name: 'HideZoneInfoOnProperties',
       hive: 'HKEY_CURRENT_USER',
-      key:  '\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments',
+      key:  'Software\Microsoft\Windows\CurrentVersion\Policies\Attachments',
     }) do
       its("HideZoneInfoOnProperties") { should eq 1 }
     end
