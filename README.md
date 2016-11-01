@@ -44,39 +44,9 @@ user    0m12.392s
 sys 1m6.712s
 ```
 
-The STIGs are pulled down from https://www.stigviewer.com. The Windows2012 is based on https://www.stigviewer.com/stig/microsoft_windows_server_2012_member_server/2013-07-25/.
-
-Why are we not using the newer https://www.stigviewer.com/stig/windows_server_2012_2012_r2_member_server/? Because the tests there are un-automatable.  For example, the
-`The required legal notice must be configured to display before console logon.` is implemented for Win2012 as:
-https://www.stigviewer.com/stig/microsoft_windows_server_2012_member_server/2013-07-25/finding/WN12-SO-000022
-which reads, in part:
+## Windows Demo:
 
 ```
-Details
-Check Text ( C-WN12-SO-000022_chk )
-If the following registry value does not exist or is not configured as specified, this is a finding:
-
-Registry Hive: HKEY_LOCAL_MACHINE
-Registry Path: \Software\Microsoft\Windows\CurrentVersion\Policies\System\
-
-Value Name: LegalNoticeText
-
-Value Type: REG_SZ
-Value: See message text below
-
-You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.
+inspec exec path/to/inspec-stigs/win2012member/ -t winrm://username@host  \
+  --password 'password' --format=progress
 ```
-
-But for  Win2012r2 the comparable section reads:
-
-```
-Details
-Check Text ( None )
-None
-Fix Text (F-45771r2_fix)
-Configure the policy value for Computer Configuration -> Windows Settings -> Security Settings -> Local Policies -> Security Options -> "Interactive Logon: Message text for users attempting to log on" to the following:
-
-You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.
-```
-
-and good luck automating that....
